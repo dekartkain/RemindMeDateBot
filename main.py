@@ -1,6 +1,8 @@
 import os
 import telebot #telegram api
+from flask import Flask, request
 import requests #http (https://github.com/requests/requests)
+from random import randint
 
 TOKEN = os.environ['PP_BOT_TOKEN']
 URL = os.environ['PP_BOT_URL']
@@ -8,6 +10,7 @@ REPO = os.environ['PP_BOT_REPO']
 SECRET = '/' + TOKEN
 
 bot = telebot.TeleBot(TOKEN)
+server = Flask(__name__)
 ################################################################################################################
 
 #приветствие, id
