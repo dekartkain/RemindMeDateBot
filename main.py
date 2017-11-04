@@ -15,10 +15,10 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 ################################################################################################################
 
-while 1>0:
-	def infinity(message):
-		bot.send_message(message.chat.id, 'опоп, опоп')
-		time.sleep(10)
+#while 1>0:
+#	def infinity(message):
+#		bot.send_message(message.chat.id, 'опоп, опоп')
+#		time.sleep(10)
 
 
 #datetime.datetime.now().date()
@@ -29,6 +29,7 @@ while 1>0:
 def start(message):
 	bot.send_message(message.chat.id, 'Привет, ' + message.from_user.first_name + '... Твой id: ' + str(message.from_user.id))
 	bot.send_message(message.chat.id, 'Я буду напоминать тебе о важных датах!')
+	bot.send_message(message.chat.id, message.chat.id)
 	
 
 	
