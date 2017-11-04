@@ -20,11 +20,7 @@ def job():
 	def start(message):
 		bot.send_message(256587040, 'тест')
 
-schedule.every(1).minutes.do(job)
-schedule.every().hour.do(job)
-schedule.every().day.at("5:27").do(job)
-schedule.every().monday.do(job)
-schedule.every().wednesday.at("13:15").do(job)
+schedule.every(10).seconds.do(job)
 
 while True:
     schedule.run_pending()
