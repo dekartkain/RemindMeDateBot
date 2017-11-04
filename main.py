@@ -3,6 +3,8 @@ import telebot #telegram api
 from flask import Flask, request
 import requests #http (https://github.com/requests/requests)
 from random import randint
+import time
+import datetime
 
 TOKEN = os.environ['PP_BOT_TOKEN']
 URL = os.environ['PP_BOT_URL']
@@ -13,12 +15,22 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 ################################################################################################################
 
+while 1>0:
+	bot.send_message(message.chat.id, 'опоп, опоп')
+	time.sleep(10)
+
+
+#datetime.datetime.now().date()
+
+
 #приветствие, id
 @bot.message_handler(commands=['start', 'help'])
 def start(message):
 	bot.send_message(message.chat.id, 'Привет, ' + message.from_user.first_name + '... Твой id: ' + str(message.from_user.id))
 	bot.send_message(message.chat.id, 'Я буду напоминать тебе о важных датах!')
-  
+	
+
+	
   
 ################################################################################################################	
 @server.route(SECRET, methods=['POST'])
