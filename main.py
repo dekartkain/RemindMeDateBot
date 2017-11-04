@@ -24,9 +24,9 @@ def inf(message):
 	i = 0
 	while i <= 100:
 		now = datetime.datetime.now()
-		bot.send_message(256587040, 'бот работает ' + str(i) + ' час(ов), сообщение отправлено в ' + str(now.strftime("%H:%M %d-%m-%Y ")))
+		bot.send_message(256587040, 'бот работает ' + str(i) + ' проход(ов), сообщение отправлено в ' + str(now.strftime("%H:%M %d-%m-%Y ")))
 		i += 1
-		time.sleep(3600)  
+		time.sleep(60)  
 
 #datetime.datetime.now().date()
 
