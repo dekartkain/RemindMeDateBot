@@ -16,8 +16,9 @@ server = Flask(__name__)
 ################################################################################################################
 
 while 1>0:
-	bot.send_message(message.chat.id, 'опоп, опоп')
-	time.sleep(10)
+	def infinity(message):
+		bot.send_message(message.chat.id, 'опоп, опоп')
+		time.sleep(10)
 
 
 #datetime.datetime.now().date()
