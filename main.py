@@ -16,13 +16,16 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 ################################################################################################################
 
+now = datetime.datetime.now()
 
 #тест
 @bot.message_handler(commands=['inf'])
 def inf(message):
-	while True:
-		bot.send_message(256587040, 'Я буду напоминать тебе о важных датах!')
-		time.sleep(3600)  
+	i = 0
+	while i <= 100:
+		bot.send_message(256587040, 'бот работает ' + str(i) + ' час(ов), сообщение отправлено в ' + str(now.strftime("%H:%M %d-%m-%Y ")))
+		i += 1
+		time.sleep(60)  
 
 #datetime.datetime.now().date()
 
