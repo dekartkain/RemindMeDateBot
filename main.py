@@ -5,6 +5,7 @@ import requests #http (https://github.com/requests/requests)
 from random import randint
 import time
 import datetime
+import schedule
 
 TOKEN = os.environ['PP_BOT_TOKEN']
 URL = os.environ['PP_BOT_URL']
@@ -15,10 +16,19 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 ################################################################################################################
 
-while 1>0:
-	def infinity(message):
-		bot.send_message(256587040, 'опоп, опоп')
-		time.sleep(10)
+def job():
+	def start(message):
+		bot.send_message(256587040, 'тест')
+
+schedule.every(1).minutes.do(job)
+schedule.every().hour.do(job)
+schedule.every().day.at("5:27").do(job)
+schedule.every().monday.do(job)
+schedule.every().wednesday.at("13:15").do(job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
 
 #datetime.datetime.now().date()
