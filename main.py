@@ -16,16 +16,6 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 ################################################################################################################
 
-def job():
-	def start(message):
-		bot.send_message(256587040, 'тест')
-
-schedule.every(10).seconds.do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-
 
 #datetime.datetime.now().date()
 
