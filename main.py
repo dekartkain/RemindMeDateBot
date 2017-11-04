@@ -22,7 +22,7 @@ server = Flask(__name__)
 def inf(message):
 	while True:
 		bot.send_message(256587040, 'Я буду напоминать тебе о важных датах!')
-		time.sleep(10)  
+		time.sleep(3600)  
 
 #datetime.datetime.now().date()
 
