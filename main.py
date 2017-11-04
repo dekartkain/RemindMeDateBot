@@ -17,6 +17,13 @@ server = Flask(__name__)
 ################################################################################################################
 
 
+#тест
+@bot.message_handler(commands=['inf'])
+def inf(message):
+	while True:
+		bot.send_message(256587040, 'Я буду напоминать тебе о важных датах!')
+		time.sleep(10)  
+
 #datetime.datetime.now().date()
 
 
