@@ -22,6 +22,7 @@ markup.row('a', 'v')
 markup.row('c', 'd', 'e')
 bot.send_message(message.chat.id, "Choose one letter:", reply_markup=markup)
 
+
 #тест
 @bot.message_handler(commands=['inf'])
 def inf(message):
