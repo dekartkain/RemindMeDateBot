@@ -1,5 +1,6 @@
 import os
 import telebot #telegram api
+from telebot import types
 from flask import Flask, request
 import requests #http (https://github.com/requests/requests)
 from random import randint
@@ -15,6 +16,11 @@ SECRET = '/' + TOKEN
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 ################################################################################################################
+
+markup = types.ReplyKeyboardMarkup()
+markup.row('a', 'v')
+markup.row('c', 'd', 'e')
+bot.send_message(message.chat.id, "Choose one letter:", reply_markup=markup)
 
 #тест
 @bot.message_handler(commands=['inf'])
